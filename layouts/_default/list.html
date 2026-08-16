@@ -1,0 +1,8 @@
+{{ define "main" }}
+<h1>{{ .Title }}</h1>
+<div class="post-list">
+{{ range .Pages }}
+<article class="card"><time>{{ .Date.Format "2006.01.02" }}</time><h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2><p>{{ .Description | default (.Summary | plainify | truncate 140) }}</p></article>
+{{ end }}
+</div>
+{{ end }}
