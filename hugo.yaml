@@ -1,16 +1,11 @@
 baseURL: "https://kubby72.github.io/blog/"
 languageCode: "ko-KR"
+locale: "ko-KR"
 title: "Kubby72 Blog"
-theme: ""
-
-caches:
-  images:
-    dir: ":cacheDir/images"
 
 params:
   description: "여행, 국토종주, 등산, 지역정보, 카페, 투자와 생활정보를 기록하는 블로그"
-author:
-  name: "Kubby72"
+  author: "Kubby72"
 
 outputs:
   home:
