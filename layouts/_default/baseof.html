@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ if .Title }}{{ .Title }} | {{ end }}{{ site.Title }}</title>
+  <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ site.Params.description }}{{ end }}">
+  <link rel="canonical" href="{{ .Permalink }}">
+  {{ with resources.Get "css/main.css" }}<link rel="stylesheet" href="{{ .RelPermalink }}">{{ end }}
+  {{ if .IsHome }}<meta property="og:type" content="website">{{ else }}<meta property="og:type" content="article">{{ end }}
+  <meta property="og:title" content="{{ .Title }}">
+  <meta property="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{ site.Params.description }}{{ end }}">
+  <meta property="og:url" content="{{ .Permalink }}">
+  <meta name="twitter:card" content="summary">
+</head>
+<body>
+<header class="site-header"><div class="wrap"><a class="brand" href="{{ site.Home.RelPermalink }}">{{ site.Title }}</a><nav><a href="{{ site.Home.RelPermalink }}">홈</a><a href="{{ "posts/" | relURL }}">글</a></nav></div></header>
+<main class="wrap">{{ block "main" . }}{{ end }}</main>
+<footer class="site-footer"><div class="wrap">© {{ now.Year }} {{ site.Params.author.name | default site.Title }}</div></footer>
+</body>
+</html>
