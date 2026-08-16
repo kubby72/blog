@@ -1,0 +1,19 @@
+{{ define "main" }}
+<section class="hero">
+  <p class="eyebrow">KUBBY72 BLOG</p>
+  <h1>여행 · 도전 · 정보 · 투자</h1>
+  <p>{{ site.Params.description }}</p>
+</section>
+<section>
+  <h2>최근 글</h2>
+  <div class="post-list">
+  {{ range first 20 (where site.RegularPages "Type" "posts") }}
+    <article class="card">
+      <time>{{ .Date.Format "2006.01.02" }}</time>
+      <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+      <p>{{ .Description | default (.Summary | plainify | truncate 140) }}</p>
+    </article>
+  {{ end }}
+  </div>
+</section>
+{{ end }}
