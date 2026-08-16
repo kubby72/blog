@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://kubby72.github.io/blog/sitemap.xml
