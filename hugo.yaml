@@ -5,7 +5,8 @@ title: "Kubby72 Blog"
 
 params:
   description: "여행, 국토종주, 등산, 지역정보, 카페, 투자와 생활정보를 기록하는 블로그"
-  author: "Kubby72"
+  author:
+    name: "Kubby72"
 
 outputs:
   home:
